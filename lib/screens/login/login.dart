@@ -26,7 +26,7 @@ class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     this.context = context;
-    this.interactor = new LoginInteractor(formKey, context, user);
+    this.interactor = new LoginInteractor(formKey, context, _scaffoldKey, user);
     final Size screenSize = MediaQuery.of(context).size;
     return new Scaffold(
       key: _scaffoldKey,

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "174617626442",
+    "firebase_url": "https://remo-5d4d0.firebaseio.com",
+    "project_id": "remo-5d4d0",
+    "storage_bucket": "remo-5d4d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174617626442:android:fe3a21438a2087aa",
+        "android_client_info": {
+          "package_name": "com.hojeda.base.baseflutterfirebaselogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174617626442-7t4suunb237sh2aekkl3ql2gq6utimth.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSjAdTvYa8KOBlh_c1yylG5ZJ0O7LHDP0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

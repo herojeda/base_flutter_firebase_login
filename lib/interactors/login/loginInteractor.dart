@@ -15,7 +15,8 @@ class LoginInteractor{
   LoginInteractor(
     this._formKey,
     this._context,
-    this.user
+    this._scaffoldKey,
+    this.user,
   ) :
   _authService = new AuthService(),
   autovalidate = false;
@@ -24,23 +25,30 @@ class LoginInteractor{
     final FormState form = _formKey.currentState;
     if (!form.validate()) {
       this.autovalidate = true; // Start validating on every change.
-      showInSnackBar('Please fix the errors in red before submitting.');
+      showInSnackBar('Por favor, corrija los errores marcados en rojo');
     } else {
       form.save();
-      _authService.verifyUser(user).then((onValue) {
-        if (onValue)
-          Navigator.pushNamed(_context, "/HomePage");
-        else
-          showInSnackBar("Login Successfull");
-      }).catchError((PlatformException onError) {
-        showInSnackBar(onError.message);
-      });
+      try {
+        _authService.verifyUser(user).then((onValue) {
+          if (onValue)
+            Navigator.pushNamed(_context, "/HomePage");
+          else
+            showInSnackBar("Error, revise su usuario y/o contraseña");
+        }).catchError((PlatformException onError) {
+          showInSnackBar(onError.message);
+        });
+      } catch (e) {
+        showInSnackBar("Error, revise su usuario y/o contraseña");
+      }
     }
   }
 
   void showInSnackBar(String value) {
     _scaffoldKey.currentState
-        .showSnackBar(new SnackBar(content: new Text(value)));
+      .showSnackBar(SnackBar(
+        content: Text(value),
+        duration: Duration(seconds: 10),
+    ));
   }
 
 }
