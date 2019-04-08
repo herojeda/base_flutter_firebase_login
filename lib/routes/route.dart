@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:base_flutter_firebase_login/screens/home/home.dart';
+import 'package:base_flutter_firebase_login/screens/login/login.dart';
 import 'package:base_flutter_firebase_login/themes/style.dart';
 
 class Routes {
@@ -11,7 +12,7 @@ class Routes {
   Routes() {
     runApp(new MaterialApp(
       title: "Base Flutter-Firebase Login.",
-      home: new HomeScreen(),
+      home: new LoginScreen(),
       theme: appTheme,
       routes: routes,
     ));
